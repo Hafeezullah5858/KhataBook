@@ -425,7 +425,7 @@ class Businesses extends StatelessWidget {
       final q = s.tx.where((x) => x['business'] == b['id']);
       final a = q.where((x) => x['type'] == 'income').fold(0.0, (v, x) => v + (x['amount'] as num).toDouble());
       final e = q.where((x) => x['type'] == 'expense').fold(0.0, (v, x) => v + (x['amount'] as num).toDouble());
-      return Card(margin: const EdgeInsets.only(bottom: 10), child: ListTile(leading: const CircleAvatar(child: Icon(Icons.storefront_outlined)), title: Text(b['name'].toString(), style: const TextStyle(fontWeight: FontWeight.w800)), subtitle: Text('Income ${rs(a)} • Expense ${rs(e)}'), trailing: Text(rs(a - e), style: const TextStyle(fontWeight: FontWeight.w900)));
+      return Card(margin: const EdgeInsets.only(bottom: 10), child: ListTile(leading: const CircleAvatar(child: Icon(Icons.storefront_outlined)), title: Text(b['name'].toString(), style: const TextStyle(fontWeight: FontWeight.w800)), subtitle: Text('Income ${rs(a)} • Expense ${rs(e)}'), trailing: Text(rs(a - e), style: const TextStyle(fontWeight: FontWeight.w900))));
     }),
   ]);
 }
